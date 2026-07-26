@@ -1,0 +1,32 @@
+{
+    "Olives": [
+        {
+            "color": "Red",
+            "orientation": "Ace",
+            "gender": false,
+            "inventory": 44,
+            "oil_to_pomace_ratio": 0.11
+        },
+        {
+            "color": "Blue",
+            "orientation": "Straight",
+            "gender": true,
+            "inventory": 400,
+            "oil_to_pomace_ratio": 0.25
+        },
+        {
+            "color": "Purple",
+            "orientation": "Gay",
+            "gender": true,
+            "inventory": 64,
+            "oil_to_pomace_ratio": 0.88
+        },
+        {
+            "color": "Green",
+            "orientation": "Bi",
+            "gender": false,
+            "inventory": 100,
+            "oil_to_pomace_ratio": 0.42
+        }
+    ]
+}
