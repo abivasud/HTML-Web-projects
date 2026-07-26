@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --text-color: #333;
+        --background-color: #cbfaa1;
+        --poopoopeepee: #420006;
+    }
+
+
+    @media only screen and (min-width: 600px) and (max-width: 666px) {
+        body {
+            background-color: blue;
+        }
+
+
+        h1 {
+            color: rgb(255, 0, 45);
+            font-size: 100pt;
+            text-align: center;
+        }
+    }
+
+
+    @media only screen and (min-width: 640px) and (max-width: 717px){
+        body {
+            background-color: rgb(255, 0, 42);
+        }
+    }
+
+
+    @media only screen and (min-width: 725px) and (max-width: 800px){
+        body {
+            background-color: var(--poopoopeepee);
+        }
+    }
+
+
+</style>
+<nav>
+    <ul>
+        <li><a onclick="updatePage(title1, content1)" href="#">Home</a></li>
+        <li><a onclick="updatePage(title2, content2)" href="#">AVOID</a></li>
+    </ul>
+</nav>
+<head>
+    <title id="head_title">Page title</title>
+</head>
+<script>
+    document.getElementById("head_title").textContent = "New title";
+</script>
+
+
+<body>
+    <h1 id="h1_title">Olive Oil Online</h1>
+    <p id="content">
+        Imagine this is a place where you could buy a digital asset called "Virtual Olive Oil". Imagine a much better version of NFTs. It acts as currency. It acts as nurishment. And it acts as a source of life fulfillment. If you would like to purchase some virtual olive oil, just click one of the two links above! Maybe don't click the "AVOID" link though because the Olive Oil there is rancid and not going to taste very good. And I do have to warn you: the oil has a special pigment which is activated and deactivated through horizontal compression, so if you change the width of your browser window, it can change the colors on the website.
+    </p>
+</body>
+<script>
+
+
+    let title1 = "Home of the Olives and the Oil that it Produces 🫒🫒🫒🫒";
+    let content1 = "<h1><p>This is a home page content</h1></p> And look, I can add as many tags as I want in here and you don't see those tags applied, you literally see the tags themselves as if this was html code. By the way, if you want to see more information on the different olives that we have in inventory, then right click your mouse on any part of this site to open up a menu and click \"inspect\" to show the console, and from there you can also resize the rest of the website relative to the console which allows you to check out the color changing mechanism";
+
+
+    let title2 = "PoopooPeePee 💩💩💩💩";
+    let content2 = "This is poopoo and peepee!!!! Return back to the previous content immediately!!!! 💩💩💩💩";
+
+
+    function updatePage(title, content) {
+        document.getElementById("head_title").textContent = title;
+        document.getElementById("h1_title").textContent = title;
+        document.getElementById("content").textContent = content;
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOMContentLoaded fired");
+
+
+        fetch("data.json")
+            .then(response => response.json())
+            .then(jsonData => {
+                console.log(jsonData)
+                parseJSON(jsonData)
+            })
+            .catch(error => {
+                console.log("Problem");
+                console.log(error);
+            });
+       
+        console.log("After the promise");
+
+
+        function parseJSON(jsonData) {
+            console.log("ParseJSON called!");
+            jsonData.Olives.forEach(olive => {
+                console.log("The " + olive.color + " " + olive.orientation + " Olive is of the " + olive.gender + " gender and is " + 100*olive.oil_to_pomace_ratio + "% oil and " + 100*(1-olive.oil_to_pomace_ratio) + "% pomace. We have " + olive.inventory + " of such olives in our inventory!")
+            });
+        }
+
+
+    })
+   
+</script>
+
+
+</html>
